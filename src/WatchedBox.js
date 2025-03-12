@@ -24,9 +24,10 @@ const tempWatchedData = [
     userRating: 9,
   },
 ];
-function WatchedBox() {
+{
+  /*function WatchedBox() {
   const [isOpen2, setIsOpen2] = useState(true);
-  const [watched, setWatched] = useState(tempWatchedData);
+  // const [watched, setWatched] = useState(tempWatchedData);
   return (
     <div className="box">
       <button
@@ -45,3 +46,5 @@ function WatchedBox() {
   );
 }
 export default WatchedBox;
+*/
+}
