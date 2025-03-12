@@ -1,6 +1,12 @@
 import NavBar from "./NavBar";
 import Main from "./Main";
 import { useState } from "react";
+import NumResults from "./NumResults";
+import Search from "./Search";
+import Logo from "./Logo";
+import ListBox from "./ListBox";
+import WatchedBox from "./WatchedBox";
+import MovieList from "./MovieList";
 const tempMovieData = [
   {
     imdbID: "tt1375666",
@@ -29,8 +35,17 @@ export default function App() {
   const [movies, setMovies] = useState(tempMovieData);
   return (
     <>
-      <NavBar />
-      <Main movies={movies} />
+      <NavBar>
+        <Logo />
+        <Search />
+        <NumResults movies={movies} />
+      </NavBar>
+      <Main>
+        <ListBox>
+          <MovieList movies={movies} />
+        </ListBox>
+        <WatchedBox />
+      </Main>
     </>
   );
 }

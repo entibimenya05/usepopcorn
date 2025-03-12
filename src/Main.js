@@ -1,14 +1,8 @@
-import ListBox from "./ListBox";
-import WatchedBox from "./WatchedBox";
-
-function Main({ movies }) {
+//fixing prop drilling with component composition using children and <Component></Component>
+function Main({ children }) {
   return (
     <>
-      <main className="main">
-        <ListBox movies={movies} />
-        <WatchedBox />
-      </main>
-      ;
+      <main className="main">{children}</main>;
     </>
   );
 }
