@@ -19,6 +19,8 @@ const textStyle = {
 export default function StarRating({ maxRating = 5 }) {
   //since we want the ui to render when something happens,we need state
   const [rating, setRating] = useState(0);
+  //handling the hover event
+  const [tempRating, setTempRating] = useState(0);
   return (
     <div style={containerStyle}>
       <div style={starContainerStyle}>
@@ -28,11 +30,14 @@ export default function StarRating({ maxRating = 5 }) {
           <Star
             key={i}
             onRate={() => setRating(i + 1)}
-            full={rating >= i + 1}
+            full={tempRating ? tempRating >= i + 1 : rating >= i + 1}
+            //handling the hover event
+            onHoverIn={() => setTempRating(i + 1)}
+            onHoverOut={() => setTempRating(0)}
           />
         ))}
       </div>
-      <p style={textStyle}>{rating || ""}</p>
+      <p style={textStyle}>{tempRating || rating || ""}</p>
     </div>
   );
 }

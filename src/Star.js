@@ -5,11 +5,18 @@ const starStyle = {
   cursor: "pointer",
 };
 
-export default function Star({ onRate, full }) {
+export default function Star({ onRate, full, onHoverIn, onHoverOut }) {
   return (
     //role is for accessibility;role='button, i.e behave like a button
     <div>
-      <span role="button" style={starStyle} onClick={onRate}>
+      <span
+        role="button"
+        style={starStyle}
+        onClick={onRate}
+        //handling the hover event
+        onMouseEnter={onHoverIn}
+        onMouseLeave={onHoverOut}
+      >
         {full ? (
           <svg
             xmlns="http://www.w3.org/2000/svg"
