@@ -1,11 +1,17 @@
-const starStyle = {
-  width: "48px",
-  height: "48px",
-  display: "block",
-  cursor: "pointer",
-};
-
-export default function Star({ onRate, full, onHoverIn, onHoverOut }) {
+export default function Star({
+  onRate,
+  full,
+  onHoverIn,
+  onHoverOut,
+  color,
+  size,
+}) {
+  const starStyle = {
+    width: `${size}px`,
+    height: `${size}px`,
+    display: "block",
+    cursor: "pointer",
+  };
   return (
     //role is for accessibility;role='button, i.e behave like a button
     <div>
@@ -29,9 +35,9 @@ export default function Star({ onRate, full, onHoverIn, onHoverOut }) {
         ) : (
           <svg
             xmlns="http://www.w3.org/2000/svg"
-            fill="none"
+            fill={color}
             viewBox="0 0 24 24"
-            stroke="#000"
+            stroke={color}
           >
             <path
               strokeLinecap="round"
